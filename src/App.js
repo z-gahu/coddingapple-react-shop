@@ -38,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainContent shoes={shoes} />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="*" element={<div>없는페이지</div>} />
       </Routes>
 
       <button
