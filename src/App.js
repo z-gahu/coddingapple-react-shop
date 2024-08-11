@@ -39,6 +39,10 @@ function App() {
         <Route path="/" element={<MainContent shoes={shoes} />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="*" element={<div>없는페이지</div>} />
+        <Route path="/about" element={<About />}>
+          <Route path="member" element={<div>멤버</div>} />
+          <Route path="location" element={<div>location</div>} />
+        </Route>
       </Routes>
 
       <button
@@ -52,6 +56,14 @@ function App() {
   );
 }
 
+function About() {
+  return (
+    <div>
+      <h4>회사정보임</h4>
+      <Outlet></Outlet>
+    </div>
+  );
+}
 function Card(props) {
   return (
     <div className="col-md-4">
