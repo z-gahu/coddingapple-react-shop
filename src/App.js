@@ -9,13 +9,13 @@ import { Routes, Route, Link } from "react-router-dom";
 function App() {
   let [shoes] = useState(data);
 
-  <Routes>
-    <Route path="/" element={<div>메인페이지임</div>} />
-    <Route path="/about" element={<div>상세페이지임 </div>} />
-  </Routes>;
-
   return (
-    <div>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<div>메인페이지임</div>} />
+        <Route path="/about" element={<div>상세페이지임 </div>} />
+      </Routes>
+
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
