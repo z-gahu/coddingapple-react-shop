@@ -37,7 +37,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<MainContent shoes={shoes} />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
         <Route path="*" element={<div>없는페이지</div>} />
         <Route path="/about" element={<About />}>
           <Route path="member" element={<div>멤버</div>} />
