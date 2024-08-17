@@ -1,4 +1,16 @@
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
+
+let YellowBtn = styled.button`
+  background: ${(props) => props.bg};
+  color: ${(props) => (props.bg == "blue" ? "white" : "black")};
+  padding: 10px;
+`;
+
+let Box = styled.div`
+  background: grey;
+  padding: 20px;
+`;
 
 function Detail(props) {
   let { id } = useParams();
@@ -14,6 +26,10 @@ function Detail(props) {
   console.log("찾은상품", 찾은상품);
   return (
     <div className="container">
+      <Box>
+        <YellowBtn bg="blue">버튼</YellowBtn>
+        <YellowBtn bg="orange">버튼</YellowBtn>
+      </Box>
       <div className="row">
         <div className="col-md-6">
           <img
