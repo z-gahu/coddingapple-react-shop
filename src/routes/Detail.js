@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
@@ -23,9 +24,38 @@ function Detail(props) {
 
   let 찾은상품 = props.shoes.find((x) => x.id.toString() === id);
 
-  console.log("찾은상품", 찾은상품);
+  useEffect(() => {
+    // detail 컴포넌트가 처음장창될때, 업데이트 될떄 실행됨
+    // 실행시점이 다르다 => 렌더링 후에 실행된다.
+    // 어려운 연산
+    //  서버에서 데이터가져오는 작업
+    // 타이머 장착하는거
+
+    for (var i = 0; i < 10000; i++) {
+      console.log(i);
+    }
+
+    // effect 란 단어를 사용하는가?
+    // 사이트 이펙트에서 따옴
+    console.log("컴포넌트 로드 업데이트마다 실행");
+  });
+
+  // for (var i = 0; i < 10000; i++) {
+  //   console.log(i);
+  // }
+
+  let [count, setCount] = useState(0);
+
   return (
     <div className="container">
+      {count}
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        버튼
+      </button>
       <Box>
         <YellowBtn bg="blue">버튼</YellowBtn>
         <YellowBtn bg="orange">버튼</YellowBtn>
